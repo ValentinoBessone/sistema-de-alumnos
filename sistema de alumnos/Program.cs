@@ -13,7 +13,8 @@ do
     Console.WriteLine("3. Buscar un alumno por legajo");
     Console.WriteLine("4. Mostrar el promedio general del curso");
     Console.WriteLine("5. Mostrar cuántos alumnos están aprobados");
-    Console.WriteLine("6. Salir");
+    Console.WriteLine("6. Probar exportación (Interfaces)");
+    Console.WriteLine("7. Salir");
     Console.Write("Elija una opción: ");
 
     if (!int.TryParse(Console.ReadLine(), out opcion))
@@ -122,6 +123,18 @@ do
             break;
 
         case 6:
+            List<IExportable> listaExportables = new List<IExportable>();
+            listaExportables.Add(new Alumno("Ana Pérez", 40000000, 1234));
+            listaExportables.Add(new Profesor("Marta Díaz", 20000000, "Programación"));
+            listaExportables.Add(new Materia("PROG1", "Programación I", 128));
+
+            Console.WriteLine("\n--- EXPORTACIÓN UNIFICADA ---");
+            foreach (var item in listaExportables)
+            {
+                Console.WriteLine(item.ExportarLinea());
+            }
+            break;
+        case 7:
             Console.WriteLine("Saliendo del sistema...");
             break;
 
@@ -130,7 +143,7 @@ do
             break;
     }
 
-} while (opcion != 6);
+} while (opcion != 7);
 
 // Prueba de Polimorfismo
 List<Persona> personasPrueba = new List<Persona>();
@@ -140,4 +153,16 @@ personasPrueba.Add(new Profesor("Marta Díaz", 20000000, "Programación"));
 foreach (Persona p in personasPrueba)
 {
     Console.WriteLine(p.Presentarse());
+}
+List<IExportable> exportables = new List<IExportable>();
+
+
+exportables.Add(new Alumno("Ana Pérez", 40000000, 1234));
+exportables.Add(new Profesor("Marta Díaz", 20000000, "Programación"));
+exportables.Add(new Materia("PROG1", "Programación I", 128));
+
+Console.WriteLine("\n--- EXPORTACIÓN UNIFICADA ---");
+foreach (var item in exportables)
+{
+    Console.WriteLine(item.ExportarLinea());
 }
