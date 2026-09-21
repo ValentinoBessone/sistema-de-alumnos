@@ -15,5 +15,9 @@ namespace sistema_de_alumnos
         {
             return "Prof. " + Nombre + " - Materia: " + Materia + " (Doc: " + Documento + ")";
         }
+        public override string Presentarse()
+        {
+            return "Hola, soy " + Nombre + " y dicto " + Materia + ".";
+        }
     }
 }

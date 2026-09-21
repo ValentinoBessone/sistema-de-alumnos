@@ -45,5 +45,9 @@
         {
             return Legajo + " - " + Nombre + " (promedio: " + Promedio() + ")";
         }
+        public override string Presentarse()
+        {
+            return "Hola, soy " + Nombre + ", alumno con legajo " + Legajo + ".";
+        }
     }
 }

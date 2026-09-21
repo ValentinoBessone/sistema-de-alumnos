@@ -131,3 +131,13 @@ do
     }
 
 } while (opcion != 6);
+
+// Prueba de Polimorfismo
+List<Persona> personasPrueba = new List<Persona>();
+personasPrueba.Add(new Alumno("Ana Pérez", 40000000, 1234));
+personasPrueba.Add(new Profesor("Marta Díaz", 20000000, "Programación"));
+
+foreach (Persona p in personasPrueba)
+{
+    Console.WriteLine(p.Presentarse());
+}
