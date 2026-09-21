@@ -28,10 +28,13 @@ do
             Console.Write("Ingrese nombre: ");
             string nombre = Console.ReadLine();
 
+            Console.Write("Ingrese documento: ");
+            int documento = int.Parse(Console.ReadLine());
+
             Console.Write("Ingrese legajo: ");
             int legajo = int.Parse(Console.ReadLine());
 
-            Alumno nuevoAlumno = new Alumno(nombre, legajo);
+            Alumno nuevoAlumno = new Alumno(nombre, documento, legajo);
 
             Console.Write("Ingrese Nota 1 (0 a 10): ");
             double n1 = double.Parse(Console.ReadLine());
